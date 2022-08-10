@@ -29,6 +29,15 @@ function Review() {
             return checkNumber(newIndex)
         })
     }
+
+    const randomPerson = () => {
+        let randomNumber = Math.floor(Math.random() * people.length)
+        if (randomNumber === index) {
+            randomNumber = index + 1
+        }
+        setIndex(checkNumber(randomNumber))
+        console.log(randomNumber)
+    }
     return (
         <article>
             <img src={image} alt={name} />
@@ -45,7 +54,7 @@ function Review() {
                 </button>
             </div>
 
-            <button>
+            <button onClick={randomPerson}>
                 Surprise Me
             </button>
         </article>
